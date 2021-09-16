@@ -1,0 +1,11 @@
+/**index.wxss**/
+/* view{
+    color: var(--themeColor);
+} */
+swiper{
+    width: 750rpx;
+    height: 300rpx;
+}
+image{
+    width: 100%;
+}

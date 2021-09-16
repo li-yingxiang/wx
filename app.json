@@ -1,0 +1,55 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/category/index",
+    "pages/goods_list/index",
+    "pages/goods_detail/index",
+    "pages/cart/index",
+    "pages/collect/index",
+    "pages/order/index",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/feedback/index",
+    "pages/login/index",
+    "pages/auth/index",
+    "pages/pay/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0894ec",
+    "navigationBarTitleText": "优购",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#0894ec",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "./static/img/home.png",
+      "selectedIconPath": "./static/img/home-active.png"
+    },
+    {
+      "pagePath": "pages/category/index",
+      "text": "分类",
+      "iconPath": "./static/img/category.png",
+      "selectedIconPath": "./static/img/category-active.png"
+    },
+    {
+      "pagePath": "pages/cart/index",
+      "text": "分类",
+      "iconPath": "./static/img/shappgin.png",
+      "selectedIconPath": "./static/img/shapping-active.png"
+    },
+    {
+      "pagePath": "pages/user/index",
+      "text": "分类",
+      "iconPath": "./static/img/my.png",
+      "selectedIconPath": "./static/img/my-active.png"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
