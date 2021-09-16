@@ -9,3 +9,13 @@ swiper{
 image{
     width: 100%;
 }
+.index_cate{
+    display: flex;
+}
+.index_cate navigator{
+    padding: 30rpx;
+    flex:1;
+}
+.index_cate navigator image{
+    width: 100%;
+}

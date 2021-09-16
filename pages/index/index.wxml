@@ -12,4 +12,12 @@
         </swiper-item>
     </swiper>
     <!-- 轮播图结束 -->
+    <!-- 导航开始 -->
+    <view class="index_cate">
+        <navigator wx:for="{{cateList}}" wx:key="name" url="item.navigator_url">
+            <image mode="widthFix" src="{{item.image_src}}"></image>
+        </navigator>
+    </view>
+    <!-- 导航结束 -->
+    
 </view>
