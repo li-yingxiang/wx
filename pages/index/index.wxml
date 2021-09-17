@@ -19,5 +19,29 @@
         </navigator>
     </view>
     <!-- 导航结束 -->
-    
+    <!-- 楼层开始-->
+    <!-- 楼层结束-->
+    <view class="index_floor">
+        <view 
+        class="floor_group" 
+        wx:for="{{floorList}}" 
+        wx:key="floor_title" 
+        wx:for-item="item1"
+        wx:for-index ="index1"
+        >
+            <!-- 标题 -->
+            <view class="floor_title">
+                <image mode = "widthFix" src="{{item1.floor_title.image_src}}"></image>
+            </view> 
+            <!-- 内容 -->
+            <view class="floor_list">
+                <navigator 
+                wx:for="{{item1.product_list}}"
+                wx:key="name" 
+                wx:for-item="item2"
+                wx:for-index ="index2"
+                ><image mode="widthFix" src="{{item2.image_src}}"></image></navigator>
+            </view>
+        </view>
+    </view>
 </view>

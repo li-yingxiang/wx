@@ -9,8 +9,8 @@ Page({
     // 轮播
     swiperList: [],
     // 导航
-    cateList:[],
-    floorList:[]
+    cateList: [],
+    floorList: []
   },
   onLoad() {
     // 获取轮播图
@@ -22,7 +22,7 @@ Page({
   onShow() {
     console.log(this.data.swiperList)
   },
-  getSwiperList(){
+  getSwiperList() {
     request({
       url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'
     }).then((result) => {
@@ -31,7 +31,7 @@ Page({
       })
     })
   },
-  getCateList(){
+  getCateList() {
     request({
       url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'
     }).then((result) => {
@@ -40,7 +40,7 @@ Page({
       })
     })
   },
-  getFloorList(){
+  getFloorList() {
     request({
       url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
     }).then((result) => {
