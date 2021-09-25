@@ -11,34 +11,76 @@ Page({
         // 左侧菜单数据
         leftMenuList: [],
         // 右侧菜单数据
-        rightContent: []
+        rightContent: [],
+        // 左侧标签索引
+        currentIndex:0,
+        // 右侧滚动条距离顶部距离
+        scrollTop:0
     },
     Cates: [],
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getCass()
+        // 请求前判断本地有没有缓存 小程序本地存储
+        const cates = wx.getStorageSync("cates");
+        if(!cates){
+            this.getCass()
+        }else{
+            // 判断有没有过期
+            if(Date.now()-cates.time>1000*10){
+                this.getCass()
+            }else{
+                this.Cates = cates.data;
+                let leftMenuList = this.Cates.map(v=>v.cat_name)
+                let rightContent = this.Cates[0].children
+                this.setData({
+                    leftMenuList,
+                    rightContent
+                })
+            }
+        }
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    getCass() {
-        request({
-            url: "https://api-hmugo-web.itheima.net/api/public/v1/categories"
-        }).then((res) => {
-            console.log(res.data.mess)
-            this.Cates = res.data.message;
-            console.log(this.Cates)
+    async getCass() {
+        // request({
+        //     url: "/categories"
+        // }).then((res) => {
+        //     // console.log(res.data.mess)
+        //     this.Cates = res.data.message;
+        //      // 存入缓存
+        //      wx.setStorageSync('cates', {time:Date.now(),data:this.Cates})
+        //     let leftMenuList = this.Cates.map(v=>v.cat_name)
+        //     let rightContent = this.Cates[0].children
+        //     this.setData({
+        //         leftMenuList,
+        //         rightContent
+        //     })
+        // })
+        const res = await request({url: "/categories"})
+            this.Cates = res;
+             // 存入缓存
+             wx.setStorageSync('cates', {time:Date.now(),data:this.Cates})
             let leftMenuList = this.Cates.map(v=>v.cat_name)
             let rightContent = this.Cates[0].children
             this.setData({
                 leftMenuList,
                 rightContent
             })
-        })
     },
+    handleItemTap(e){
+        const index =  e.currentTarget.dataset.index
+        let leftMenuList = this.Cates.map(v=>v.cat_name)
+        let rightContent = this.Cates[index].children
+        this.setData({
+            currentIndex : index,
+            rightContent,
+            scrollTop:0
+        })
+    },  
     onReady: function () {
 
     },

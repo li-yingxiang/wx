@@ -38,13 +38,13 @@
     },
     {
       "pagePath": "pages/cart/index",
-      "text": "分类",
+      "text": "购物车",
       "iconPath": "./static/img/shappgin.png",
       "selectedIconPath": "./static/img/shapping-active.png"
     },
     {
       "pagePath": "pages/user/index",
-      "text": "分类",
+      "text": "我的",
       "iconPath": "./static/img/my.png",
       "selectedIconPath": "./static/img/my-active.png"
     }
